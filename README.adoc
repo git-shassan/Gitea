@@ -39,7 +39,7 @@ spec:
   storageClassName: ocs-storagecluster-ceph-rbd
 ```
 === Step#2: Creating Deployment:
-This step simply creates the deployment. The only mentionable step here is use of the environment variable `GITEA__security__INSTALL_LOCK`. Any environment varibale passed to Gitea pod in this format are used to set up the initializtion files in Gitea. More details are available [here](https://docs.gitea.com/installation/install-with-docker-rootless#managing-deployments-with-environment-variables) 
+This step simply creates the deployment. The only mentionable step here is use of the environment variable `GITEA__security__INSTALL_LOCK`. Any environment varibale passed to Gitea pod in this format are used to set up the initializtion files in Gitea. More details are available https://docs.gitea.com/installation/install-with-docker-rootless#managing-deployments-with-environment-variables[here]
 
 The only variable being passed here is `INSTALL_LOCK` that goes under the `security` section of the app.ini configuration file. This removes the need to manually perform the initial installation. 
 
