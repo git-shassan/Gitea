@@ -1,0 +1,54 @@
+== What is Gitea: 
+Gitea is an opensource Git server, available at: https://about.gitea.com/ 
+
+== Gitea in Kubernetes
+Though their site provides some pointers about how to run it in a docker contatiner, I didn't find good instructions and sample manifests to run Gitea in a Kubernetes environment 
+This repo is meant to provide a [full manifest](https://github.com/git-shassan/Gitea/tree/main/gitea_full.yaml) that can be used for that purpose, as well as a breakdown of the manifest to explain any changes you may need to make for your own environment.
+
+== The steps: 
+
+=== Step#1: Creating PVC:
+Gitea uses two volume mount points. The example here assumes that you have Persistent Volume configured, that uses storage class `ocs-storagecluster-ceph-rbd`. 
+However, other storageclass may be used. If you don't have a persistent volume, you can always skip this step and use `emptydir` later when creating the deploloyment. However, that will ofcourse not offer your persistent storage. 
+
+The size of the PVC here are not based on any recommendations. So adjusst these based on your requirements.  (1G might be overkill for  config mount, and 8G may not be sufficient for some deployments) 
+
+```
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: gitea-data-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 8Gi
+  storageClassName: ocs-storagecluster-ceph-rbd
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: gitea-config-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ocs-storagecluster-ceph-rbd
+```
+=== Step#2: Creating Deployment:
+                                                                                                           
+                                                                                                            
+                                                                                                              
+=== Step#2: Creating PVC:
+                                                                                                              
+                                                                                                              
+=== Step#2: Creating PVC:
+
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
