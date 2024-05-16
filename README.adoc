@@ -3,7 +3,7 @@ Gitea is an opensource Git server, available at: https://about.gitea.com/
 
 == Gitea in Kubernetes
 Though their site provides some pointers about how to run it in a docker contatiner, I didn't find good instructions and sample manifests to run Gitea in a Kubernetes environment 
-This repo is meant to provide a [full manifest](https://github.com/git-shassan/Gitea/tree/main/gitea_full.yaml) that can be used for that purpose, as well as a breakdown of the manifest to explain any changes you may need to make for your own environment.
+This repo is meant to provide a (full manifest)[https://github.com/git-shassan/Gitea/tree/main/gitea_full.yaml)] that can be used for that purpose, as well as a breakdown of the manifest to explain any changes you may need to make for your own environment.
 
 == The steps: 
 
