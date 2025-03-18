@@ -100,7 +100,7 @@ spec:
     name: giteahttp
   - port: 2222
     protocol: TCP
-    targetPort: 2222
+    targetPort: 22
     name: giteassh
   selector:
     app: gitea
